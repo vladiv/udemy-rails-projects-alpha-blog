@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>AlphaBlog</title>
-    <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>AlphaBlog</title>
+  <%= csrf_meta_tags %>
 
-  <body>
-    <header>
-      <%= link_to root_path do %>
-        <img src="https://www.komplitt.com/assets/logo-aff2edfd2fcf46b2f7ac4f6825838c93ffbbcfc9a4154eda8e09e3e64608d7d3.svg" alt="Logo">
-      <% end %>
-      <nav>
-        <ul>
-          <li><%= link_to 'Home', root_path %></li>
-          <li><%= link_to 'About', about_path %></li>
-        </ul>
-      </nav>
-    </header>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-    <%= yield %>
-
-    <footer>
-      <%= link_to root_path do %>
-        <img src="https://www.komplitt.com/assets/logo-aff2edfd2fcf46b2f7ac4f6825838c93ffbbcfc9a4154eda8e09e3e64608d7d3.svg" alt="Logo footer">
-      <% end %>
+<body>
+  <% flash.each do |name,msg| %>
+    <ul>
+      <li><%= msg %></li>
+    </ul>
+  <% end %>
+  <header>
+    <%= link_to root_path do %>
+      <img src="https://www.komplitt.com/assets/logo-aff2edfd2fcf46b2f7ac4f6825838c93ffbbcfc9a4154eda8e09e3e64608d7d3.svg" alt="Logo">
+    <% end %>
+    <nav>
       <ul>
         <li><%= link_to 'Home', root_path %></li>
         <li><%= link_to 'About', about_path %></li>
       </ul>
-      <div>© 2006-2017, Komplitt</div>
-    </footer>
-  </body>
+    </nav>
+  </header>
+
+  <%= yield %>
+
+  <footer>
+    <%= link_to root_path do %>
+      <img src="https://www.komplitt.com/assets/logo-aff2edfd2fcf46b2f7ac4f6825838c93ffbbcfc9a4154eda8e09e3e64608d7d3.svg" alt="Logo footer">
+    <% end %>
+    <ul>
+      <li><%= link_to 'Home', root_path %></li>
+      <li><%= link_to 'About', about_path %></li>
+    </ul>
+    <div>© 2006-2017, Komplitt</div>
+  </footer>
+</body>
 </html>
