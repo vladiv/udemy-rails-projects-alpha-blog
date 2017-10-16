@@ -1,6 +1,5 @@
 // Note: You must restart bin/webpack-dev-server for changes to take effect
 
-const webpack = require('webpack')
 const merge = require('webpack-merge')
 const sharedConfig = require('./shared.js')
 const { settings, output, plugins } = require('./configuration.js')
@@ -29,14 +28,5 @@ module.exports = merge(sharedConfig, {
     watchOptions: {
       ignored: /node_modules/
     }
-  },
-
-  plugins: [
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery',
-      Popper: ['popper.js', 'default']
-    })
-  ]
+  }
 })
