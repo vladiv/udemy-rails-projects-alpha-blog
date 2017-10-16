@@ -1,22 +1,19 @@
-<% if @article.errors.any? %>
-<h2>The following errors prevented the article from getting created</h2>
-<ul>
-  <% @article.errors.full_messages.each do |msg| %>
-  <li><%= msg %></li>
-  <% end %>
-</ul>
-<% end %>
+<%= render 'shared/errors', obj: @article %>
 
 <%= form_for(@article, :html => {class: 'some-class', role: 'form'}) do |f| %>
   <div class="form-group row">
-    <%= f.label :title, class: 'col-sm-2 col-form-label', for: 'inputArticleTitle' %>
+    <div class="col-sm-2 text-right">
+      <%= f.label :title, class: 'col-form-label', for: 'inputArticleTitle' %>
+    </div>
     <div class="col-sm-8">
       <%= f.text_field :title, class: 'form-control', id: 'inputArticleTitle', placeholder: 'Title for article', autofocus: true %>
     </div>
   </div>
 
   <div class="form-group row">
-    <%= f.label :description, class: 'col-sm-2 col-form-label', for: 'inputArticleBody' %>
+    <div class="col-sm-2 text-right">
+      <%= f.label :description, class: 'col-form-label', for: 'inputArticleBody' %>
+    </div>
     <div class="col-sm-8">
       <%= f.text_area :description, class: 'form-control', id: 'inputArticleBody', placeholder: 'Body of article', rows: 10 %>
     </div>
