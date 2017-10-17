@@ -1,0 +1,42 @@
+<h1 class="text-center mb-5">Signup for Alpha blog</h1>
+
+<%= render 'shared/errors', obj: @user %>
+
+<%= form_for(@user, :html => {class: 'some-class', role: 'form'}) do |f| %>
+  <div class="form-group row">
+    <div class="col-sm-2 text-right">
+      <%= f.label :username, class: 'col-form-label', for: 'inputUsername' %>
+    </div>
+    <div class="col-sm-8">
+      <%= f.text_field :username, class: 'form-control', id: 'inputUsername', placeholder: 'Enter username', autofocus: true %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-2 text-right">
+      <%= f.label :email, class: 'col-form-label', for: 'inputUserEmail' %>
+    </div>
+    <div class="col-sm-8">
+      <%= f.email_field :email, class: 'form-control', id: 'inputUserEmail', placeholder: 'Enter email' %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-2 text-right">
+      <%= f.label :paswword, class: 'col-form-label', for: 'inputUserPassword' %>
+    </div>
+    <div class="col-sm-8">
+      <%= f.password_field :password, class: 'form-control', id: 'inputUserPassword', placeholder: 'Enter password' %>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-10 ml-auto">
+      <%= f.submit 'Sign up', class: 'btn btn-primary btn-lg' %>
+    </div>
+  </div>
+<% end %>
+
+<div class="text-center">
+  [ <%= link_to 'Cancel request and return to articles listing', articles_path %> ]
+</div>
