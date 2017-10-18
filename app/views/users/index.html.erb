@@ -1,5 +1,7 @@
 <h1 class="text-center mb-5">All Alpha Bloggers</h1>
 
+<%= will_paginate class: 'd-flex justify-content-center' %>
+
 <% @users.each do |user| %>
   <div class="row justify-content-center">
     <div class="col-4">
@@ -15,3 +17,4 @@
     </div>
   </div>
 <% end %>
+<%= will_paginate class: 'd-flex justify-content-center' %>
