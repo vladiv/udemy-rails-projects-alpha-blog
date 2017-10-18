@@ -2,8 +2,18 @@
 <div class="row justify-content-center">
   <div class="col-8">
     <div class="card bg-light">
-      <h4 class="card-header text-center"><strong>Description:</strong></h4>
+      <% if @article.user %>
+        <div class="card-header text-center">
+          <small>Created by:</small>
+          <div class="mt-1"><%= link_to gravatar_for(@article.user), user_path(@article.user) %></div>
+          <h4><%= link_to @article.user.username, user_path(@article.user) %></h4>
+          <small class="text-muted">
+            <%= pluralize(@article.user.articles.count, 'article') if @article.user.articles %>
+          </small>
+        </div>
+      <% end %>
       <div class="card-body">
+        <h4 class="text-center"><strong>Description:</strong></h4>
         <%= simple_format(@article.description) %>
       </div>
       <div class="card-footer">
