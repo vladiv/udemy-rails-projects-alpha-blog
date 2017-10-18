@@ -35,7 +35,7 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownUserActions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Your Profile
+              Your Profile <%= 'Admin' if current_user.admin? %>
             </a>
             <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownUserActions">
               <%= link_to 'Edit your profile', edit_user_path(current_user), class: 'dropdown-item' %>
