@@ -1,11 +1,11 @@
-<h1 class="text-center"><%= 'Category ' + @category.name %></h1>
+<h1 class="text-center<%= (!logged_in? && !current_user.admin?) ? " mb-5" : "" %>"><%= 'Category ' + @category.name %></h1>
 
 <% if logged_in? && current_user.admin? %>
-  <div class="text-center">
+  <div class="text-center mb-5">
     <%= link_to 'Edit Category Name', edit_category_path(@category), class: "badge badge-primary text-uppercase" %>
   </div>
 <% end %>
 
-<%= will_paginate @category_articles, class: 'd-flex justify-content-center mt-5' %>
+<%= will_paginate @category_articles, class: 'd-flex justify-content-center' %>
 <%= render 'articles/article', obj: @category_articles %>
 <%= will_paginate @category_articles, class: 'd-flex justify-content-center' %>

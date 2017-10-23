@@ -20,9 +20,6 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownActions">
               <%= link_to 'New article', new_article_path, class: 'dropdown-item' %>
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
         <% end %>
@@ -43,10 +40,6 @@
           </div>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
       <ul class="navbar-nav ml-auto">
         <% if logged_in? %>
           <li class="nav-item">
