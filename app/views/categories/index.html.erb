@@ -1,4 +1,4 @@
-<h1 class="tet-center mb-5">Listing All Categories</h1>
+<h1 class="text-center mb-5">Listing All Categories</h1>
 <%= will_paginate class: 'd-flex justify-content-center' %>
 <% @categories.each do |category| %>
   <div class="row justify-content-center">
@@ -6,6 +6,7 @@
       <div class="card bg-light mb-3 text-center">
         <div class="card-body">
           <h4 class="card-title mb-0"><%= link_to "#{category.name}", category_path(category) %></h4>
+          <small><%= pluralize(category.articles.count, "article") %></small>
         </div>
       </div>
     </div>

@@ -13,6 +13,9 @@
             <%= time_ago_in_words(article.created_at) %> ago,
             last updated: <%= time_ago_in_words(article.updated_at) %> ago
           </small>
+          <% if article.categories.any? %>
+            <p class="mb-0 mt-3">Categories: <%= render article.categories %></p>
+          <% end %>
         </div>
         <% if logged_in? && (current_user == article.user || current_user.admin?) %>
           <div class="card-footer">
