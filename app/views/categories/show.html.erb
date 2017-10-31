@@ -1,4 +1,8 @@
-<h1 class="text-center<%= (!logged_in? && !current_user.admin?) ? " mb-5" : "" %>"><%= 'Category ' + @category.name %></h1>
+<% if logged_in? && current_user.admin? %>
+  <h1 class="text-center"><%= 'Category ' + @category.name %></h1>
+<% else %>
+  <h1 class="text-center mb-5"><%= 'Category ' + @category.name %></h1>
+<% end %>
 
 <% if logged_in? && current_user.admin? %>
   <div class="text-center mb-5">
